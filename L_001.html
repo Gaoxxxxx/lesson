@@ -21,7 +21,39 @@
     <p>段落</p>
     <!-- 图片  相对路径 绝对路径 alt 当图片显示不出来时显示文字 -->
     <img src="image\aic222r56d.jpg" alt="这是一张图片" title="这是一个title">
+    <!--相对路径 上级：../   同级直接访问  下一级-->
     <img src="https://sdk.appadhoc.com/h5editor-images/595070ea-601b-58f4-42ff-d2d91558972732152" alt="这是一个图片">
     <br/><a href="http://www.baidu.com" target="_blank">去百度</a>
+    <ul><!--列表-->
+            <li>111</li>
+            <li>111</li>
+            <li>111</li>
+    </ul>
+    <!-- 划分区块 进行布局 div+css布局 -->
+    <div></div>
+    <!--
+        行级元素可多个占一行 
+        块级元素 自己占一行 
+    -->
+    <!--
+        span 行级元素
+    -->
+    <form action=""><!--action里是提交的地址-->
+        <label for="username">用户名：</label><input type="text" id="username">
+        密码：<input type="password"><br/>
+        男<input type="radio" name="sex"><!--单选框-->
+        女<input type="radio" name="sex">
+        <!--
+            设置name使其成为一组
+        -->
+        <select><!--下拉菜单-->
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select><br/>
+        <textarea></textarea><!--文本域-->
+        <input type="submit"><!--提交按钮 点击自动提交-->
+        <button>lalala</button><!--无自动提交功能-->
+    </form> <!--表单-->
 </body>
 </html>
