@@ -1,0 +1,7 @@
+/* style in here*/
+.mainCanvas{
+    width:400px;
+    height:400px;
+    background-color: bisque;
+    border:solid 1px black;
+} 
