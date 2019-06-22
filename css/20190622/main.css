@@ -48,3 +48,21 @@ a:hover{
     margin-right: 10px; 
     background: #dd182b;
 }
+button{
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: blue;
+    border: 0;
+}
+a:hover ,button:hover{
+        /* css 过渡效果 */
+        transition:  0.5s;
+        -moz-transition:  0.5s;	/* Firefox 4 */
+        -webkit-transition:  0.5s;	/* Safari 和 Chrome */
+        -o-transition:  0.5s;	/* Opera */
+}
+button:hover{
+    color: black;
+    background-color :lightsteelblue;
+}

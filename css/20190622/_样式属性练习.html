@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .a {
+            width: 900px;
+            height: 450px;
+            background-image: url(aic222r56d.jpg);
+            background-color: brown;
+            background-repeat: no-repeat;
+        }
+
+        .b {
+            width: 900px;
+            height: 300px;
+            background-image: url(aic222r56d.jpg);
+            background-color: brown;
+            background-repeat: no-repeat;
+            background-position: -300px -100px
+        }
+
+        p {
+            /* 文本装饰  
+                none 去掉下划线 
+                underline  下划线
+                overline   上划线
+                line-through   贯穿线
+            */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: aquamarine;
+            /* text-decoration: line-through; */
+            text-decoration: underline;
+            /* text-decoration: overline; */
+        }
+
+        a {
+            text-decoration-line: none;
+        }
+        a:hover {
+            color: darkorange;
+            /* 浏览器最小字体大小为12px */
+            font-size: 30px;
+            /* css 过渡效果 */
+            transition: 0.5s;
+            -moz-transition: 0.5s;
+            /* Firefox 4 */
+            -webkit-transition: 0.5s;
+            /* Safari 和 Chrome */
+            -o-transition: 0.5s;
+            /* Opera */
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c">
+        <p>lalalalalalalal</p>
+    </div>
+    <a href="http://baidu.com" target="_blank">123456789987654321123456987</a>
+</body>
+
+</html>
