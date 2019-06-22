@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 外联css样式文件 -->
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* 雪碧图 css精灵 */
+        /* 
+            单行文本垂直居中 line-height=height;
+        */
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 选择器优先级 
+        内联样式优先级最高       1000
+        #id选择器               100
+        .class选择器            10
+        元素选择器/伪元素选择器   1
+
+        eg.
+        .parent .child{} 20
+        .parent{}        10
+    -->
+    <div class="parent">
+        <div>111
+            <div class="child" style="font-size: 15px">lalalalalalalalaal</div>
+        </div>
+        <div>222</div>
+        <div>333</div>
+    </div>
+    <p class="text">789456123</p>
+    <p id="txt">123456789</p>
+    <a href="#">lalalalalalalalaal</a>
+</body>
+</html>

@@ -1,0 +1,50 @@
+div{
+    color: blueviolet;
+}
+/* p{
+    color: aquamarine;
+} */
+/* class 选择器 */
+.text{
+    color:cadetblue;
+}
+/* id 选择器 */
+#txt{
+    color: brown;
+}
+a{
+    color: black;
+    /* 取消锚点的默认样式 */
+    text-decoration: none;
+}
+/* 伪类 hover为鼠标滑过动作 */
+a:hover{
+    color: chartreuse;
+}
+/* 子代选择器 */
+.parent > div{
+    color: crimson;
+}
+/* 后代选择器 可以不是直属子节点 只要是后代都可以 */
+.parent .child{
+    font-size: 20px;
+    color: crimson;
+}
+/* 兄弟选择器 */
+.text + #txt{
+    font-size: 50px;
+}
+/* 分组选择器 */
+.parent,.child,.text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* 伪元素 */
+.text::before{
+    content: '';
+    /* inline-block 转换为行内属性 */
+    display: inline-block;
+    width: 6px;
+    height: 16px;
+    margin-right: 10px; 
+    background: #dd182b;
+}
