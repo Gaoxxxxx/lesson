@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 2000px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .div1 {
+            margin-left: 200px;
+            width: 600px;
+            height: 800px;
+            background: #0000ff;
+        }
+
+        .div2 {
+            position: absolute;
+            top: 300px;
+            width: 150px;
+            height: 150px;
+            background: #228282;
+            /* 相对定位
+               1.相对自己的初始位置
+               2.定位之后空间不释放（和浮动不同）
+
+               绝对定位
+               1.相对于最近已定位祖先元素进行绝对定位
+               2.定位之后释放空间
+
+               fixed 固定定位
+               1.相对于浏览器
+               2.定位后空间释放
+               3.定位后的元素宽度高度是由内容撑起来
+
+               position:sticky; 粘性定位
+
+            */
+        }
+
+        .div3 {
+            width: 150px;
+            height: 150px;
+            background: #668899;
+        }
+
+        .div4 {
+            position: relative;
+            top: 200px;
+            width: 150px;
+            height: 150px;
+            background: #773322;
+        }
+
+        .div1 div {
+            float: left;
+        }
+
+        .div5 {
+            background: #ff0000;
+            /* position: absolute;
+            top:0;
+            left: 0; */
+        }
+
+        .div0 {
+            position: sticky;
+            position: -webkit-sticky;
+             top: 0; 
+             /* 一定要设置top 否则不能成功 */
+            height: 32px;
+            background: #ffff00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div0">lalalalalalal</div>
+    <div class="div1">
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+    </div>
+    <div class="div5">lalalalala0000</div>
+</body>
+
+</html>
