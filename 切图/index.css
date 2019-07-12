@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 1280px;
+    margin: 0 auto;
+    height: 1901px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 1002px;
+    margin: 0 auto;
+
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* nav开始 */
+.nav {
+    height: 120px;
+}
+
+#logo {
+    width: 189px;
+    height: 47px;
+    margin: 37px 139px 36px 0;
+    float: left;
+}
+
+.search-bar {
+    margin: 45px 0;
+    width: 130px;
+    height: 30px;
+    float: right;
+    background-color: #F1F3F6;
+}
+
+#search {
+    padding-left: 10px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    /* 输入框 选中样式   */
+    outline: none;
+    background-color: #F1F3F6;
+}
+
+
+
+.nav-list li {
+    line-height: 13px;
+    margin: 55px 0px;
+    padding: 0px 25px;
+    float: left;
+
+}
+
+.list-font {
+    color: #626262;
+    font-size: 13px;
+    font-family: PTSans-Regular;
+    font-weight: 400;
+}
+
+.blue {
+    color: #00AEFF;
+}
+
+.sparate {
+    border-left: 1px solid #626262;
+}
+
+/* nav结束 */
+/* banner开始 */
+.banner {
+    background-color: #31333E;
+    height: 460px;
+    position: relative;
+}
+
+.banner-font {
+    font-size: 29px;
+    font-family: PTSans-Regular;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: absolute;
+    top: 47px;
+    left: 287px;
+
+}
+
+.learn-button {
+    position: absolute;
+    top: 39px;
+    left: 839px;
+    width: 180px;
+    height: 50px;
+    background: #00AEFF;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.banner-phone {
+    position: absolute;
+    top: 114px;
+    left: 368px;
+}
+
+.banner-turnleft {
+    margin: 205px 0;
+}
+
+.banner-turnright {
+    float: right;
+    margin: 205px 0;
+
+}
+
+/* banner 结束 */
+/* news开始 */
+.news {
+    height: 492px;
+    position: relative;
+}
+
+.news-left {
+    width: 334px;
+    float: left;
+}
+
+.news-title1{
+    position: absolute;
+    top:87px;
+    left:233px;
+    font-size: 25px;
+
+}
+
+.logo2{
+    position: absolute;
+    top:144px;
+    left:256px;
+
+}
+
+.news-contect1{
+    font-size: 15px;
+    height: 133px;
+    width: 286px;
+    position: absolute;
+    top:270px;
+    left:163px;
+    text-align: center;
+}
+
+.news-title2{
+    position: absolute;
+    top:87px;
+    left:562px;
+    font-size: 25px;
+
+}
+
+.logo3{
+    position: absolute;
+    top:138px;
+    left:590px;
+
+}
+
+.news-contect2{
+    font-size: 15px;
+    height: 133px;
+    width: 286px;
+    position: absolute;
+    top:272px;
+    left:497px;
+    text-align: center;
+}
+
+.news-title3{
+    position: absolute;
+    top:89px;
+    left:900px;
+    font-size: 25px;
+
+}
+
+.logo4{
+    position: absolute;
+    top:139px;
+    left:924px;
+
+}
+
+.news-contect3{
+    font-size: 15px;
+    height: 133px;
+    width: 286px;
+    position: absolute;
+    top:273px;
+    left:831px;
+    text-align: center;
+}
+
+.read-more{
+    font-size: 15px;
+    color:#33BEFF;
+    font-weight: 600;
+}
+
+.news-mid {
+    width: 334px;
+    float: left;
+}
+
+.news-right {
+    width: 334px;
+    float: left;
+}
+
+/* news结束 */
+/* works开始 */
+.works {
+    position: relative;
+    height: 500px;
+    background-color: #E2E7ED;
+}
+
+.works-font{
+    position: absolute;
+    top:29px;
+    left:139px;
+    color: #626262;
+    font-size: 30px;
+}
+
+.works-list{
+    position: absolute;
+    top: 70px;
+    width: 1000px;
+}
+.works-list li{
+    float: left;
+}
+.works-list img{
+    display: block;
+}
+
+/* works结束 */
+/* clients开始 */
+.clients {
+    position: relative;
+    height: 153px;
+}
+
+.clients-title{
+    position: absolute;
+    top:29px;
+    left:142px;
+    font-size: 25px;
+    color: #626262;
+}
+
+.clients-logo1{
+    width: 113px;
+    height: 53px;
+    position: absolute;
+    top:71px;
+    left:223px;
+}
+.clients-logo2{
+    width: 197px;
+    height: 33px;
+    position: absolute;
+    top:82px;
+    left:393px;
+}
+.clients-logo3{
+    width: 174px;
+    height: 31px;
+    position: absolute;
+    top:83px;
+    left:647px;
+}
+.clients-logo4{
+    width: 180px;
+    height: 51px;
+    position: absolute;
+    top:72px;
+    left:878px;
+}
+.clients-turnleft{
+    position: absolute;
+    top:79px;
+    left:139px;
+}
+.clients-turnright{
+    position: absolute;
+    top:79px;
+    right:139px;
+}
+/* clients结束 */
+/* footer开始 */
+.footer {
+    position: relative;
+    height: 176px;
+    background-color: #31333E;
+}
+
+.footer-font{
+    position: absolute;
+    top:45px;
+    left:139px;
+    color: #E2E7ED;
+    font-size: 15px;
+}
+.footer-context{
+    color: #E2E7ED;
+    font-size: 12px;
+    position: absolute;
+    top:120px;
+    left:139px;
+}
+.footer-icon{
+    margin-top: 45px;
+    margin-right: 141px;
+    float: right;
+}
+
+/* footer结束 */
