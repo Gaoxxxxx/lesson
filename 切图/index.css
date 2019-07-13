@@ -143,84 +143,84 @@ ul {
     float: left;
 }
 
-.news-title1{
+.news-title1 {
     position: absolute;
-    top:87px;
-    left:233px;
+    top: 87px;
+    left: 233px;
     font-size: 25px;
 
 }
 
-.logo2{
+.logo2 {
     position: absolute;
-    top:144px;
-    left:256px;
+    top: 144px;
+    left: 256px;
 
 }
 
-.news-contect1{
+.news-contect1 {
     font-size: 15px;
     height: 133px;
     width: 286px;
     position: absolute;
-    top:270px;
-    left:163px;
+    top: 270px;
+    left: 163px;
     text-align: center;
 }
 
-.news-title2{
+.news-title2 {
     position: absolute;
-    top:87px;
-    left:562px;
+    top: 87px;
+    left: 562px;
     font-size: 25px;
 
 }
 
-.logo3{
+.logo3 {
     position: absolute;
-    top:138px;
-    left:590px;
+    top: 138px;
+    left: 590px;
 
 }
 
-.news-contect2{
+.news-contect2 {
     font-size: 15px;
     height: 133px;
     width: 286px;
     position: absolute;
-    top:272px;
-    left:497px;
+    top: 272px;
+    left: 497px;
     text-align: center;
 }
 
-.news-title3{
+.news-title3 {
     position: absolute;
-    top:89px;
-    left:900px;
+    top: 89px;
+    left: 900px;
     font-size: 25px;
 
 }
 
-.logo4{
+.logo4 {
     position: absolute;
-    top:139px;
-    left:924px;
+    top: 139px;
+    left: 924px;
 
 }
 
-.news-contect3{
+.news-contect3 {
     font-size: 15px;
     height: 133px;
     width: 286px;
     position: absolute;
-    top:273px;
-    left:831px;
+    top: 273px;
+    left: 831px;
     text-align: center;
 }
 
-.read-more{
+.read-more {
     font-size: 15px;
-    color:#33BEFF;
+    color: #33BEFF;
     font-weight: 600;
 }
 
@@ -242,23 +242,25 @@ ul {
     background-color: #E2E7ED;
 }
 
-.works-font{
+.works-font {
     position: absolute;
-    top:29px;
-    left:139px;
+    top: 29px;
+    left: 139px;
     color: #626262;
     font-size: 30px;
 }
 
-.works-list{
+.works-list {
     position: absolute;
     top: 70px;
     width: 1000px;
 }
-.works-list li{
+
+.works-list li {
     float: left;
 }
-.works-list img{
+
+.works-list img {
     display: block;
 }
 
@@ -269,52 +271,58 @@ ul {
     height: 153px;
 }
 
-.clients-title{
+.clients-title {
     position: absolute;
-    top:29px;
-    left:142px;
+    top: 29px;
+    left: 142px;
     font-size: 25px;
     color: #626262;
 }
 
-.clients-logo1{
+.clients-logo1 {
     width: 113px;
     height: 53px;
     position: absolute;
-    top:71px;
-    left:223px;
+    top: 71px;
+    left: 223px;
 }
-.clients-logo2{
+
+.clients-logo2 {
     width: 197px;
     height: 33px;
     position: absolute;
-    top:82px;
-    left:393px;
+    top: 82px;
+    left: 393px;
 }
-.clients-logo3{
+
+.clients-logo3 {
     width: 174px;
     height: 31px;
     position: absolute;
-    top:83px;
-    left:647px;
+    top: 83px;
+    left: 647px;
 }
-.clients-logo4{
+
+.clients-logo4 {
     width: 180px;
     height: 51px;
     position: absolute;
-    top:72px;
-    left:878px;
+    top: 72px;
+    left: 878px;
 }
-.clients-turnleft{
+
+.clients-turnleft {
     position: absolute;
-    top:79px;
-    left:139px;
+    top: 79px;
+    left: 139px;
 }
-.clients-turnright{
+
+.clients-turnright {
     position: absolute;
-    top:79px;
-    right:139px;
+    top: 79px;
+    right: 139px;
 }
+
 /* clients结束 */
 /* footer开始 */
 .footer {
@@ -323,21 +331,29 @@ ul {
     background-color: #31333E;
 }
 
-.footer-font{
+.footer-font {
     position: absolute;
-    top:45px;
-    left:139px;
+    top: 45px;
+    left: 139px;
+    color: #E2E7ED;
+    font-size: 15px;
+
+}
+
+.footer-font a {
     color: #E2E7ED;
     font-size: 15px;
 }
-.footer-context{
+
+.footer-context {
     color: #E2E7ED;
     font-size: 12px;
     position: absolute;
-    top:120px;
-    left:139px;
+    top: 120px;
+    left: 139px;
 }
-.footer-icon{
+
+.footer-icon {
     margin-top: 45px;
     margin-right: 141px;
     float: right;
