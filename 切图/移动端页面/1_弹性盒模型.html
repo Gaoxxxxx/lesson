@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 
+        width=device-width 页面宽度=设备宽度
+        initial-scale=1.0 默认缩放一倍
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #div1{
+            width: 600px;
+            height: 500px;
+            background: #666666;
+        }
+        #div2{
+            /* float: left; */
+            flex:1;
+            background: #68d556;
+        }
+        #div3{
+            /* float: left; */
+            flex:2;
+            background: #f59f46;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 移动端响应式设计方法
+         1.百分比设计
+         2.弹性盒模型flex
+           flex：1（份数占剩余空间百分比）
+    -->
+
+    <div id="div1">
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+
+</body>
+
+</html>
