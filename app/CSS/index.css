@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+}
+html{
+    background-color: #dddddd;
+}
+
+/* 1rem=100px   分辨率为750px时 */
+/* 搜索栏开始 */
+.search {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 7.5rem;
+    height: 0.9rem;
+    background-color: #fff;
+    border-bottom: 1px solid #dddddd;
+}
+
+.searchbar {
+    margin-top: 0.2rem;
+    margin-left: 0.2rem;
+    width: 6.6rem;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #eee;
+    display: flex;
+    align-self: center;
+}
+
+#search {
+    outline: none;
+    width: 5.6rem;
+    margin-left: 0.2rem;
+    float: left;
+    background-color: #eee;
+    border: none;
+}
+
+#search-icon {
+    float: left;
+    margin-top: 0.1rem;
+    margin-left: 0.2rem;
+    width: 0.3rem;
+    height: 0.3rem;
+}
+
+#message {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.2rem;
+    width: 0.28em;
+    height: 0.3em;
+
+}
+
+/* 搜索栏结束 */
+/* banner开始 */
+.banner {
+    margin-top:0.9rem ;
+    position: relative;
+    height: 3.9rem;
+}
+.banner button{
+    width: 1rem;
+    height: 0.4rem;
+    border-radius:5px;
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    background-color:#E30025;
+    border:none;
+    font-size: 0.2rem;
+    color: #fff;
+}
+.banner img{
+    
+    height: 3.9rem;
+}
+
+/* banner结束 */
+/* entry开始 */
+.entry {
+    height: 3.2rem;
+    background-color: #fff;
+    padding: 0.2rem 0.54rem 0 0.54rem;
+    
+}
+.sort{
+    display: flex;
+    justify-content:space-between;
+    font-size: 0.2rem;   
+}
+.sort a{
+    padding: 0 0.1rem;
+}
+
+.sort p{
+    color: #333;
+    margin-left: 0.1rem;
+}
+
+.sort div{
+    height: 1.2rem;
+    width: 1rem;
+}
+
+.sort img{
+    width: 0.8rem;
+    height: 0.8rem;
+}
+.advertisement img{
+    width: 7.1rem;
+    height: 1.4rem;
+    margin-left: -0.34rem;
+    margin-top: 0.3rem;
+}
+/* entry结束 */
+/* group-buying开始 */
+.group-buying {
+    padding: 0 0.2rem;
+    height: 4.3rem;
+    background-color: #fff;
+}
+.group-logo{
+    position: relative;
+    height: 1rem;
+}
+.diamond{
+    vertical-align: top;
+    margin-top: 0.25rem;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.turn-on{
+    float: right;
+    width: 0.14rem;
+    height: 0.24rem;
+    margin-top: 0.38rem;
+}
+.group-font,.like-font{
+    position: absolute;
+    top: 0.19rem;
+    left:0.7rem;
+    color: #333333;
+    font-size: 0.28em;
+}
+.group-en,.like-en{
+    position: absolute;
+    left: 0.69rem;
+    top: 0.61rem;
+    color: #999999;;
+    font-size: 0.18rem;
+}
+.group-goods{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.24rem;
+}
+.group-goods img{
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.group-goods p{
+    color:#333;
+}
+/* group-buying结束 */
+/* you-like开始
+    you-like没有固定长度 暂定10rem*/
+.you-like {
+    padding: 0 0.2rem;
+    margin-top: 0.1rem;
+    height: 22rem;
+    background-color:#fff;
+    margin-bottom: 0.99rem;
+}
+.like-logo{
+    position: relative;
+}
+.heart{
+    vertical-align: top;
+    margin-top: 0.25rem;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.like-goods img{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.like-goods li{
+    font-size: 0.24rem;
+    color: #333333;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.like-goods li a{
+    color:#333;
+}
+.like-goods li .price{
+    color: #EF1C00;
+    float: left;
+}
+.like-goods li .sale{
+    color: #999;
+    float: right;
+    /* position: absolute;
+    top:4.12rem;
+    left:2.79rem; */
+}
+/* you-like结束 */
+/* footer开始 */
+.footer {
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    height: 0.99rem;
+    background-color: #fff;
+    border-top: 1px solid #dddddd;
+    /* vertical-align: top; */
+
+}
+
+.home-page {
+    float: left;
+    
+    margin-left: 0.4rem;
+    width: 0.4rem;
+    height: 0.62rem;
+
+}
+
+.icon-size {
+    margin-top: 0.2rem;
+    width: 0.4rem;
+    height: 0.62rem;
+    vertical-align: top;
+    
+
+}
+.cart-size{
+    width: 0.59rem;
+    height: 0.62rem;
+    vertical-align: top;
+    margin-top: 0.2rem;
+}
+.classify {
+    float: left;
+    /* margin-top: -0.2rem; */
+    margin-left: 1.17rem;
+    width: 0.4rem;
+    height: 0.62rem;
+}
+
+.live-icon {
+    float: left;
+    /* margin-top: -0.2rem; */
+    margin-left: 1.17rem;
+    width: 0.4rem;
+    height: 0.62rem;
+}
+
+.cart {
+    width: 0.59rem;
+    height: 0.62rem;
+    float: left;
+    /* margin-top: -0.2rem; */
+    margin-left: 1.08rem;
+    
+}
+
+.mine {
+    float: left;
+    /* margin-top: -0.2rem; */
+    margin-left: 1.08rem;
+    width: 0.4rem;
+    height: 0.62rem;
+}
+
+/* footer结束 */
