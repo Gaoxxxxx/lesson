@@ -24,7 +24,7 @@ html{
     width: 7.5rem;
     height: 0.9rem;
     background-color: #fff;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 0.01rem solid #dddddd;
 }
 
 .searchbar {
@@ -137,6 +137,7 @@ html{
     height: 1rem;
 }
 .diamond{
+    float: left;
     vertical-align: top;
     margin-top: 0.25rem;
     width: 0.5rem;
@@ -148,17 +149,18 @@ html{
     height: 0.24rem;
     margin-top: 0.38rem;
 }
+.group-logo div,.like-logo div{
+    margin-top: 0.19rem;
+    float: left;
+}
 .group-font,.like-font{
-    position: absolute;
-    top: 0.19rem;
-    left:0.7rem;
+   margin-left: 0.19rem;
     color: #333333;
     font-size: 0.28em;
 }
 .group-en,.like-en{
-    position: absolute;
-    left: 0.69rem;
-    top: 0.61rem;
+    
+   margin-left: 0.19rem;
     color: #999999;;
     font-size: 0.18rem;
 }
@@ -171,7 +173,13 @@ html{
     width: 2.3rem;
     height: 2.3rem;
 }
-
+.goods-title{
+    /* 文字超出显示省略号 */
+    width: 2.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .group-goods p{
     color:#333;
 }
@@ -181,14 +189,16 @@ html{
 .you-like {
     padding: 0 0.2rem;
     margin-top: 0.1rem;
-    height: 22rem;
+    height: 21rem;
     background-color:#fff;
     margin-bottom: 0.99rem;
 }
 .like-logo{
+    height: 1rem;
     position: relative;
 }
 .heart{
+    float: left;
     vertical-align: top;
     margin-top: 0.25rem;
     width: 0.5rem;
@@ -198,11 +208,15 @@ html{
     width: 3.5rem;
     height: 3.5rem;
 }
+.like-goods ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .like-goods li{
     font-size: 0.24rem;
     color: #333333;
-    display: flex;
-    justify-content: space-between;
+    
     
 }
 .like-goods li a{
@@ -227,7 +241,7 @@ html{
     width: 100%;
     height: 0.99rem;
     background-color: #fff;
-    border-top: 1px solid #dddddd;
+    border-top: 0.01rem solid #dddddd;
     /* vertical-align: top; */
 
 }
