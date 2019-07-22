@@ -13,14 +13,13 @@
         //1.编写一个函数 f(x) = 4x2+3x+2，
         // 使用户通过提示对话框瑜入x的值，
         // 能得到相应的计算结果
-        // var num=window.prompt("请输入数字");
-        // function f(x){
-        //     var n=4*x*x+3*x+2;
-        //     alert("结果为："+n);
+        // var num = window.prompt("请输入数字");
+        // function f(x) {
+        //     var n = 4 * x * x + 3 * x + 2;
+        //     return n        
         // }
         // f(num);
-
-
+        // alert("结果为：" + f(num));
         // 2.编写一个函数Min(x,y)求出x,y这两个数中的最小值，
         // 要求x,y的值由用户通过提示对话框输入。
         // var a=window.prompt("请输入x：");
@@ -91,7 +90,7 @@
         //     }
         //     return res;
         // }
-        // var result=factorial(12)-factorial(10);
+        // var result = factorial(12)-factorial(10);
         // alert("12!-10!的结果为："+result);
 
 
@@ -170,28 +169,28 @@
         // 9.利用全局变量和函数，设计模拟幸运数字机游戏。
         // 设卒运数字为8，每次由计算机随机产生3个1-9之间(包括1和9）的随机数，
         // 当这3个随机数中有一个数字为8时，就算赢了一次，要求利用函数计算获胜率。
-        var win_rate = 0; //胜率
-        var play_times = 0; //玩的次数
-        var wins = 0; //赢得次数
-        var last_digits; //最后一次随机数组合
-        var last_win; //最后赢或输的状态
-        function PlayOnce() {
-            var i, digit;
-            play_times++;
-            last_digits = "";
-            last_win = false;
-            for (i = 0; i < 3; i++) {
-                digit = Math.floor(Math.random() * 9) + 1;
-                last_digits += digit;
-                if (digit == 8) last_win = true;
-            }
-            if (last_win) wins++;
-            win_rate = Math.floor(100 * (wins / play_times));
-        }
-        while (true) {
-            PlayOnce();
-            if (!confirm(last_digits + "\n" + (last_win ? "赢" : "输") + "\n胜率" + win_rate + "%,继续吗?")) break;
-        }
+        // var win_rate = 0; //胜率
+        // var play_times = 0; //玩的次数
+        // var wins = 0; //赢得次数
+        // var last_digits; //最后一次随机数组合
+        // var last_win; //最后赢或输的状态
+        // function PlayOnce() {
+        //     var i, digit;
+        //     play_times++;
+        //     last_digits = "";
+        //     last_win = false;
+        //     for (i = 0; i < 3; i++) {
+        //         digit = Math.floor(Math.random() * 9) + 1;
+        //         last_digits += digit;
+        //         if (digit == 8) last_win = true;
+        //     }
+        //     if (last_win) wins++;
+        //     win_rate = Math.floor(100 * (wins / play_times));
+        // }
+        // while (true) {
+        //     PlayOnce();
+        //     if (!confirm(last_digits + "\n" + (last_win ? "赢" : "输") + "\n胜率" + win_rate + "%,继续吗?")) break;
+        // }
     </script>
 </body>
 
