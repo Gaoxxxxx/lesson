@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.	编写程序，根据用户输入的数值，计算其平方、平方根和自然对数。
+        // var n = window.prompt("请输入数字");
+        // var a=Math.pow(n,2);
+        // document.write("平方为"+a+"<br>");
+        // var b=Math.sqrt(n);
+        // document.write("平方为"+b+"<br>");
+        // var c=Math.log(n);
+        // document.write("自然对数为"+c);
+
+
+
+        // 2.	使用Math对象的random()方法编制一个产生0~100之间（含0,100）的随机整数的函数。
+        // var a= Math.floor(Math.random()*101);
+
+
+        // 3.	设计一个页面，在页面上显示信息“现在是XXXX年XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！“。
+        // var now = new Date();
+        // var year=now.getFullYear();
+        // var month=now.getMonth();
+        // var day=now.getDate();
+        // var hour=now.getHours();
+        // var minute = now.getMinutes();
+        // var seconds=now.getSeconds();
+        // var today=now.getDay();
+        // document.write("现在是"+year+"年"+month+"月"+day+"日"+hour+"点"+minute+"分"+seconds+"秒（星期"+today+"），欢迎您的到访！");
+
+
+
+
+        // 4.	编制一个从字符串中收集数字字符（"0"',"1"，…"9"）的函数CollectDigits(s)，
+        // 它从字符串s中顺序取出数字，并且合并为一个独立的字符串作为函数的返回值。
+        // 例如函数调用CollectDigits("1abc23def4"）的返回值是字符串"1234"。
+        // function CollectDigits(source) {
+        //     var s = new String(source),result = "",ch, i
+        //     for (i = 0; i < s.length; i++) {
+        //         ch = s.charAt(i);
+        //         if (ch >= "0" && ch <= "9") result += ch;
+        //     }
+        //     return result;
+        // }
+        // alert(CollectDigits("1abc23def4"));
+
+
+        // 5.编制一个将两个字符串交叉合并的函数Merge(s1,s2)，
+        // 例如Merge("123","abc"）的返回结果是"1a2b3c"，如果两个字符串的长度不同，
+        // 那么就将多余部分直接合并到结果字符串的末尾，
+        // 如Merge("123456",''abc''）的返回结果是”1a2b3c456”。
+        // function Merge(s1,s2){
+        //     var a=new String(s1);
+        //     var b =new String(s2);
+        //     var result="";
+        //     var count=Math.max(a.length,b.length)
+        //     for(var i=0;i<count;i++){
+        //         if(i<a.length) result+=a.charAt(i);
+        //         if(i<b.length) result+=b.charAt(i);
+        //     }
+        //     return result;
+        // }
+        // var str1="123456";
+        // var str2="abcd";
+        // document.write(Merge(str1,str2));
+
+
+
+
+        // 6.	设计一个程序，它（使用一个数组）接收用户输入的7门课程的成绩，
+        // 然后在页面上显示其总成绩和平均分，并列出小于60的成绩。
+        // var a = window.prompt("请输入数学成绩");
+        // var b = window.prompt("请输入英语成绩");
+        // var c = window.prompt("请输入政治成绩");
+        // var d = window.prompt("请输入地理成绩");
+        // var e = window.prompt("请输入生物成绩");
+        // var f = window.prompt("请输入化学成绩");
+        // var g = window.prompt("请输入物理成绩");
+        // var num = a + b + c + d + e + f + g;
+        // document.write("总成绩为：" + num+"<br>");
+        // var even = (num / 7);
+        // document.write("平均成绩为" + even+"<br>");
+        // if (a < 60) {
+        //     document.write("数学不及格，分数为：" + a+"<br>");
+        // }
+        // if (b < 60) {
+        //     document.write("英语不及格，分数为：" + b+"<br>");
+        // } 
+        // if (c < 60) {
+        //     document.write("政治不及格，分数为：" + c+"<br>");
+        // }
+        // if (d < 60) {
+        //     document.write("地理不及格，分数为：" + d+"<br>");
+        // }
+        // if (e < 60) {
+        //     document.write("化学不及格，分数为：" + e+"<br>");
+        // }
+        // if (f < 60) {
+        //     document.write("物理不及格，分数为：" + f+"<br>");
+        // }
+        // if (g < 60) {
+        //     document.write("物理不及格，分数为：" + g+"<br>");
+        // } else{
+        //     document.write("没有不及格");
+        //     }
+
+
+        //  7.	斐波纳契（Fibonacci）数列的第一项是1，第二项是1，
+        // 以后各项都是前两项的和。请按逆序在页面中显示斐波纳契数列前40项的值
+        // （即，如果计算出来的数列是1,1,2,3,5,8…，那么显示的顺序是…，8,5,3,2,1,1)，并要求每行显示6个数。
+        //     function Fibonacci(n) {
+        //         if (n == 1 || n == 2) {
+        //             return 1;
+        //         } else {
+        //             return Fibonacci(n - 1) + Fibonacci(n - 2);
+        //         }
+
+        //     }
+        //    var res=new Array();
+        //    for(i=1;i<=40;i++){
+        //       res.push(Fibonacci(i));
+        //    }
+        //    document.write(res.reverse());
+
+
+
+        // 8.	设计一个函数DayOfYear(d)，它接必一个日期参数d，返回一个该日期是所在年份的第几天，
+        // 如DayOfYear(2000,2,8)的返回值是39.
+        // （提示：①定义一个数组months=new Array（31,28,31,30,31,30,31,31,30,31，30,31）
+        // 记录每个月少天：②定义一个辅助函数IsLeapYear(y)判定某个年份是否闰年，以确定2月份的天数是28还是29。）
+        function IsLeapYear(y) {
+            return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+        }
+
+        function DayOfYear(d) {
+            var months = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+            if (IsLeapYear(d.getFullYear())) months[2] = 29;
+            days = 0;
+            for (i = d.getMonth() - 1; i >= 0; i--) days += months[i];
+            days += d.getDate();
+            return days;
+        }
+        today=new Date();
+        // DayOfYear(today)
+        alert("今天是今年的第"+DayOfYear(today)+"天");
+    </script>
+</body>
+
+</html>
