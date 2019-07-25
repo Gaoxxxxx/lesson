@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="lala">666666</div>
+    <ul>
+        <li class="vv">123</li>
+        <li>456</li>
+        <li>789</li>
+        <li>111</li>
+
+    </ul>
+    <input type="radio" name="sex" >man
+    <input type="radio" name="sex" >woman
+    <button id="btn">戳我！</button>
+    <script>
+        // 1.通过id取元素
+        var oDiv = document.getElementById("lala");
+        console.log(oDiv);
+        var body = document.getElementsByTagName("body");
+        console.log(body);
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            body[0].style.background = "#720365";
+        }
+        // 2.通过标签名取元素 结果为集合（数组）
+        var ali = document.getElementsByTagName("li");
+        for(var i=0;i<ali.length;i++){
+            ali[i].style.background="#b7e0f3b7";
+        }
+        //3.通过class名取元素
+        var ali1 = document.getElementsByClassName("vv");
+        ali1[0].style.background = "#720365";
+
+        // 4.通过name
+        var input = document.getElementsByName("sex");
+        input[0].innerHTML = "男";
+    </script>
+</body>
+</html>

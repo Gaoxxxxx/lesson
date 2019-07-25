@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        width: 1280px;
+        margin: 0 auto;
+    }
+
+    .container ul {
+        margin-top: 30px;
+        text-decoration: none;
+        list-style: none;
+        overflow: hidden;
+    }
+
+    .container li {
+        float: left;
+        width: 80px;
+        text-align: center;
+        margin-right: 10px;
+        color: #666;
+        background-color: #f1f1f1;
+        border: 1px solid #898989;
+        font-size: 16px;
+        line-height: 30px;
+        border-bottom: none;
+    }
+
+    .container .actived {
+        background-color: #1E90FF;
+        color: #fff;
+    }
+
+    .content {
+        border: 1px solid #666;
+        width: 500px;
+        height: 250px;
+        margin-top: 0;
+    }
+
+    .content div {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <ul>
+            <li class="actived">时事</li>
+            <li>体育</li>
+            <li>娱乐</li>
+
+        </ul>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div style="display:block" class="a">时事</div>
+            <div class="a">体育</div>
+            <div class="a b">娱乐</div>
+        </div>
+    </div>
+    <script>
+        /* undefined 
+            1.定义变量未赋值
+            2.数组越界
+            3.访问对象没有属性
+            4.函数无返回值
+        */
+        var ali = document.getElementsByTagName("li");
+        var oDiv = document.getElementsByClassName("a");
+        var oDiv2 = document.getElementsByClassName("b");
+        console.log(oDiv2[0]);
+        for (var i = 0; i < ali.length; i++) {
+            ali[i].index = i; //添加索引      
+            ali[i].onclick = function () {
+
+                for (var k = 0; k < ali.length; k++) {
+                    ali[k].className = ""; //清空样式
+                    oDiv[k].style.display = "none"; //清空样式
+                }
+                this.className = "actived"; //
+                oDiv[this.index].style.display = "block";
+            }
+        }
+        // 如果不用this的话，点击会报错undefined。
+        // 因为for循环在进行的时候
+        // onclick后的匿名函数并没有执行，
+        // 这个函数是在点击的时候才执行的，当执行这个函数的时候，
+        // 它发现它自己没有这个变量i，
+        // 于是向它的作用域链中查找这个变量i，
+        // 因为当你单击这个div的时候已经for循环完了，
+        // 所以储存在作用域链里面的i的值就是3
+        // 因此必须使用this。
+        // this可以取到当前的对象。
+        // 也就是说即使for循环完了，我们也可以通过this取到准确的值而不是通过ali[i].
+    </script>
+</body>
+
+</html>

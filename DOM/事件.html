@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #div1 {
+            width: 500px;
+            height: 800px;
+            background-color: #666444;
+        }
+
+        #div2 {
+            width: 200px;
+            height: 400px;
+            background-color: #356284;
+        }
+    </style>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <script>
+        // document.onkeydown = function(e){
+        //     console.log(e.keyCode);
+        // }    
+        // document.onclick = function(e){
+        //     console.log(e.clientX,e.clientY);
+        // }
+
+        // 事件冒泡 事件捕获 事件流
+        //事件冒泡
+        // var div1 = document.getElementById("div1");
+        // var div2 = document.getElementById("div2");
+        // div1.onclick = function(){
+        //     console.log("lalala")
+        // }
+        // div2.onclick = function(){
+        //     console.log("hehehe")
+        // }
+        // // 此时点击div2显示
+        // // hehehe
+        // // lalala
+        // 事件冒泡从内到外
+
+        // 事件捕获
+        // 使用事件监听可以绑定两个相同事件
+        // var div1 = document.getElementById("div1");
+        // var div2 = document.getElementById("div2");
+        // div1.addEventListener('click', function () {
+        //     console.log('div1 捕获');
+        // }, true)
+        // div2.addEventListener('click', function () {
+        //     console.log('div2 捕获');
+        // }, true)
+        // // 此时点击div2显示
+        // // lalala
+        // // hehehe
+        // 事件捕获从外到内
+
+
+        // 事件流
+        // 先捕获在冒泡。
+
+        // 事件委托
+        // 事件委托解决了后生成的元素事件绑定问题
+        // 利用了事件冒泡的原理
+        // 把事件绑定在父元素上，然后对于事件源进行判断
+        // 执行相应处理函数
+    </script>
+</body>
+
+</html>

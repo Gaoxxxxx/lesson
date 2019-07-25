@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+
+            text-decoration: none;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        .carousel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 25;
+        }
+
+        #count {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            margin-top: 30px;
+
+        }
+
+        #count li,
+        #leftright li {
+            float: left;
+            margin-left: 5px;
+            font-size: 14px;
+            color: white;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        #leftright {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .car-img {
+            display: none;
+            float: left;
+        }
+
+        .show {
+            display: block;
+        }
+
+        #count .select {
+            background-color: rgba(238, 44, 44, 0.5);
+        }
+
+        #leftright .select {
+            background-color: rgba(238, 44, 44, 0.5);
+        }
+    </style>
+    <div class="carousel">
+        <img src="..\image\1.jpg" alt="图片" class="car-img show">
+        <img src="..\image\2.jpg" alt="图片" class="car-img">
+        <img src="..\image\3.jpg" alt="图片" class="car-img">
+        <img src="..\image\4.jpg" alt="图片" class="car-img">
+        <img src="..\image\5.jpg" alt="图片" class="car-img">
+        <ul id="count">
+            <li class="select">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul id="leftright">
+            <li id="font">&lt;</li>
+            <li id="next">&gt;</li>
+
+        </ul>
+
+
+    </div>
+    <script>
+        var count = document.getElementById("count");
+        var ali = count.getElementsByTagName("li");
+        var img = document.getElementsByClassName("car-img");
+        var count = 0;
+        // 导航绑定点击事件
+        for (var i = 0; i < ali.length; i++) {
+            ali[i].index = i;
+            ali[i].onclick = function () {
+                for (var k = 0; k < ali.length; k++) {
+                    ali[k].className = ""; //清空样式
+                    img[k].style.display = "none";
+                }
+                this.className = "select";
+                img[this.index].style.display = "block";
+                count = this.index;
+            }
+
+        }
+        // 前进后退点击事件
+        var next = document.getElementById("next");
+        var font = document.getElementById("font");
+        next.onclick = function () {
+            count++;
+            count = count > 4 ? 0 : count;
+            for (var k = 0; k < ali.length; k++) {
+                ali[k].className = ""; //清空样式
+                img[k].style.display = "none";
+            }
+            ali[count].className = "select";
+            img[count].style.display = "block";
+        }
+        font.onclick = function () {
+            count--;
+            count = count < 0 ? 4 : count;
+            for (var k = 0; k < ali.length; k++) {
+                ali[k].className = ""; //清空样式
+                img[k].style.display = "none";
+            }
+            ali[count].className = "select";
+            img[count].style.display = "block";
+        }
+        // 自动轮播
+        var timer = setInterval(next.onclick, 1500);
+       
+        var con = document.getElementsByClassName("carousel");
+        // 滑入轮播暂停
+        con[0].onmouseover = function () {
+            clearInterval(timer);  //timer清除
+        }
+        // 滑出轮播继续
+        con[0].onmouseout = function (){
+            timer = setInterval(next.onclick, 1000);  //为了下次timer可以清除，timer需要再定义一次
+        }
+
+       
+        
+    </script>
+</body>
+
+</html>

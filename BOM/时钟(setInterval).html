@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数字时钟</title>
+</head>
+
+<body>
+    <style>
+        html {
+            background-color: #b7e0f3b7;
+            color: white;
+            font-size: 130px;
+        }
+
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 900;
+           
+        }
+      span{
+            background-image: url(../image/roydwp69z3tztlrlv4.jpg);
+            background-size: cover;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip:text;
+            
+      }
+    </style>
+    <div>
+        <span id="hours"></span>
+        <span>:</span>
+        <span id="minutes"></span>
+        <span>:</span>
+        <span id="seconds"></span>
+    </div>
+    <script>
+        function time() {
+            var today = new Date();
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+            if (hour < 10) {
+                document.getElementById("hours").innerHTML = "0" + hour;
+            } else {
+                document.getElementById("hours").innerHTML = hour;
+            }
+
+            if (minute < 10) {
+                document.getElementById("minutes").innerHTML = "0" + minute;
+            } else {
+                document.getElementById("minutes").innerHTML = minute;
+            }
+            if (second < 10) {
+                document.getElementById("seconds").innerHTML = "0" + second;
+            } else {
+                document.getElementById("seconds").innerHTML = second;
+            }
+        }
+        time();
+        setInterval('time()',1000);  
+    </script>
+
+</body>
+
+</html>
