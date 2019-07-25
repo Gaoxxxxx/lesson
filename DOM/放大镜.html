@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #small-box {
+            float: left;
+            position: relative;
+        }
+
+        #big-box {
+            float: left;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+
+        #big-box img {
+            position: absolute;
+        }
+
+        #drag {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.5);
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <div id="container">
+        <div id="small-box">
+            <img src="..\image\6.jpg" alt="">
+            <span id="drag"></span>
+        </div>
+        <div id="big-box">
+            <img src="..\image\7.jpg" alt="" id="big-img">
+        </div>
+    </div>
+    <script>
+        var oSmallBox = document.getElementById("small-box");
+        var oBiglBox = document.getElementById("big-box");
+        var oDrag = document.getElementById("drag");
+        var oImg = document.getElementById("big-img");
+        // 鼠标移入显示
+        oSmallBox.onmouseover = function () {
+            oDrag.style.display = "block";
+            oBiglBox.style.display = "block";
+        }
+        // 鼠标移出隐藏
+        oSmallBox.onmouseout = function () {
+            oDrag.style.display = "none";
+            oBiglBox.style.display = "none";
+        }
+
+        oDrag.onmousemove = function (e) {
+            var bigDisX = oImg.offsetWidth - oBiglBox.offsetWidth; //大图可以走的最大x轴距离 绝对值
+            var smallDisX = oSmallBox.offsetWidth - oDrag.offsetWidth; //小框可以走的最大x轴距离 绝对值
+            var perX = oDrag.offsetLeft / smallDisX; //小框已走的x轴距离和总距离的比值
+            var bigDisY = oImg.offsetHeight - oBiglBox.offsetHeight; //大图可以走的最大y轴距离 绝对值
+            var smallDisY = oSmallBox.offsetHeight - oDrag.offsetHeight; //小框可以走的最大y轴距离 绝对值
+            var perY = oDrag.offsetTop / smallDisY; //小框已走的y轴距离和总距离的比值
+            oDrag.style.left = e.clientX - oDrag.offsetWidth / 2 + "px";
+            oImg.style.left = -perX * bigDisX + "px"; //利用比率算大图的left
+            if (oDrag.offsetLeft > 200) {
+                oDrag.style.left = "200px";
+                oImg.style.left = "-400px";
+            } else if (oDrag.offsetLeft < 0) {
+                oDrag.style.left = "0px";
+                oImg.style.left = "0px";
+            }
+            oDrag.style.top = e.clientY - oDrag.offsetHeight / 2 + "px";
+            oImg.style.top = -perY * bigDisY + "px"; //利用比率算大图的top
+            if (oDrag.offsetTop > 200) {
+                oDrag.style.top = "200px";
+                oImg.style.top = "-400px";
+            } else if (oDrag.offsetTop < 0) {
+                oDrag.style.top = "0px";
+                oImg.style.top = "0px";
+            }
+        }
+    </script>
+</body>
+
+</html>

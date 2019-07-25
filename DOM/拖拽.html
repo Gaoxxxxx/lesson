@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #square {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            
+        }
+    </style>
+    <div id="square"></div>
+    <script>
+        var oSquare = document.getElementById("square");
+        var flag = false;
+        var beforeX;
+        var beforeY;
+        var objX;
+        var objY;
+        var mouseX;
+        var mouseY;
+        oSquare.onmousedown = function (e) {
+            beforeX = e.clientX; //点击时鼠标横坐标
+            beforeY = e.clientY;//点击时鼠标纵坐标
+            objX = oSquare.offsetLeft;//点击时方块左边距
+            objY = oSquare.offsetTop;//点击时方块上边距
+            mouseX = beforeX - objX;//鼠标和方块在x轴的相对位置
+            mouseY = beforeY - objY;//鼠标和方块在y轴的相对位置
+            // console.log(mouseX,mouseY);
+            flag = true;//标志置为真
+
+        }
+        oSquare.onmouseup = function (e) {
+            flag = false;//标志置为假
+        }
+        document.onmousemove = function (e) { //把move事件绑定在父元素上防止鼠标移动过快使得出现bug
+
+            if (flag) {//当标志为真时触发
+                var afterX = e.clientX;//现在的鼠标横坐标
+                var afterY = e.clientY;//现在鼠标纵坐标
+                // console.log(afterX,afterY);
+                oSquare.style.left = afterX - mouseX + "px";//现在的方块位置
+                oSquare.style.top = afterY - mouseY + "px";//现在的方块位置
+
+                // 为方块运动划分边界 边界为浏览器可视文档部分 documentElement
+                if (oSquare.offsetLeft < 0) {
+                    oSquare.style.left = "0px";
+                } 
+                else if (oSquare.offsetLeft > (document.documentElement.clientWidth - oSquare.offsetWidth)) {
+                    oSquare.style.left =  document.documentElement.clientWidth - oSquare.offsetWidth + "px";
+                }
+                if (oSquare.offsetTop < 0) {
+                    oSquare.style.top = "0px";
+                } 
+                else if (oSquare.offsetTop > (document.documentElement.clientHeight - oSquare.offsetHeight)) {
+                    oSquare.style.top = document.documentElement.clientHeight - oSquare.offsetHeight + "px";  
+                }                
+                // console.log(document.documentElement.clientHeight);
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
