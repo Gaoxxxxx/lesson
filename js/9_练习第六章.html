@@ -142,9 +142,13 @@
 
         function DayOfYear(d) {
             var months = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
-            if (IsLeapYear(d.getFullYear())) months[2] = 29;
+            if (IsLeapYear(d.getFullYear())) {
+                months[2] = 29;
+                }
             days = 0;
-            for (i = d.getMonth() - 1; i >= 0; i--) days += months[i];
+            for (i = d.getMonth() - 1; i >= 0; i--) {
+                days += months[i];
+                }
             days += d.getDate();
             return days;
         }
