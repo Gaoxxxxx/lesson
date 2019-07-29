@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        dd,
+        dt {
+            border: 1px solid #000;
+            width: 200px;
+        }
+
+        .title {
+            background-color: #000;
+            color: #fff;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #fff;
+        }
+
+        .bodys {
+            width: 200px;
+        }
+    </style>
+    <dl class="bodys">
+        <dt class="title">管理区</dt>
+        <!-- <dd>111</dd>
+        <dd>222</dd>
+        <dd>333</dd> -->
+    </dl>
+    <dl class="bodys">
+        <dt class="title">留言区</dt>
+        <!-- <dd>4545</dd>
+        <dd>6767</dd>
+        <dd>8989</dd> -->
+    </dl>
+
+
+
+
+    <script>
+        var bodys = document.getElementsByClassName("bodys")
+        var title = document.getElementsByClassName("title"); //有两个
+        console.log(bodys[0]);
+        var flag = false;
+        var flag1 = false;
+        var context1 = new Array("国际局势","娱乐八卦","科技前沿");
+        var context2 = new Array("喝茶","吃饭","看戏");
+        title[0].onclick = function () {
+            if (flag1 == false) {
+                for (var i = 0; i < 3; i++) {
+                    var oDd = document.createElement('dd');
+                    oDd.innerHTML = context1[i];
+                    bodys[0].appendChild(oDd);
+                }
+                console.log(bodys[0].childNodes);
+                flag1 = true;
+            }
+            
+
+            else {
+                var con = bodys[0].getElementsByTagName("dd");
+                console.log(con);
+                for(var j=0;j<3;j++){
+                    bodys[0].removeChild(con[0]);
+                }
+                flag1 = false;
+            }
+        }
+
+        title[1].onclick = function () {
+            if (!flag) {
+                for (var i = 0; i < 3; i++) {
+                    var oDD = document.createElement('dd');
+                    oDD.innerHTML = context2[i];
+                    bodys[1].appendChild(oDD);
+                }
+                console.log(bodys[1].childNodes);
+                flag = true;
+            }
+            
+
+            else {
+                var con2 = bodys[1].getElementsByTagName("dd");
+                console.log(con2);
+                for(var j=0;j<3;j++){
+                    bodys[1].removeChild(con2[0]);
+                }
+                flag = false;
+            }
+            // flag=!flag;
+        }
+
+        
+    </script>
+</body>
+
+</html>

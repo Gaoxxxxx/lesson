@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <script>
+        var screenWidth = document.documentElement.clientWidth;
+        var screenHeight = document.documentElement.clientHeight;
+
+        function Leaf() {
+            this.width = Math.random() * 100 + 100;
+            this.pos = {
+                left: Math.random() * (screenWidth - this.width),
+                top: 0
+            }
+            this.speed = 5;
+            var oImg = new Image();
+            oImg.src = "img/" + (Math.floor(Math.random() * 4) + 1) + ".png";
+            // console.log(oImg.src);
+            oImg.style.width = this.width + "px";
+            oImg.style.top = this.pos.top + "px";
+            oImg.style.left = this.pos.left + "px";
+            this.img = oImg;
+
+        }
+        Leaf.prototype.init = function () {
+            document.body.appendChild(this.img);
+        }
+        Leaf.prototype.fall = function () {
+            var that = this;
+            setTimeout(function () {
+                var timer = setInterval(function () {
+                    if (that.img.offsetTop >= screenHeight - that.img.offsetHeight) {
+                        clearInterval(timer);
+                    } else {
+                        that.img.style.top = that.img.offsetTop + that.speed +
+                            "px"; //不能用this，定时器里this指向windows
+                    }
+                }, 10);
+            }, Math.random() * 1000)
+
+        }
+        var leaf = [];
+        for (var i = 0; i < Math.floor(Math.random() * 20) +10; i++) {
+            // var leaf = new Leaf();
+            // arr.push(leaf);
+            leaf[i]=new Leaf();
+            // leaf.init();
+            leaf[i].init();
+            document.onclick = function () {
+                for (var j = 0; j < leaf.length; j++) {
+                    leaf[j].fall();
+                }
+            }
+        }
+    </script>
+</body>
+
+
+</html>
