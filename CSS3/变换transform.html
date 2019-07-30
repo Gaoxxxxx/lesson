@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #000;
+            perspective:700px;
+            /*设置视角  指定观察者距离「z=0」平面的距离，为元素及其内容应用透视变换。不允许负值 */
+        }
+
+        #container {
+            width: 200px;
+            height: 200px;
+            margin: 220px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            /* perspective: 800px; */
+            /* animation: rotate-frame 20s linear infinite; */
+        }
+
+
+        #container div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: translate3d(15, 15);
+            /* border-radius: 50%; */
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid #fff;
+        }
+
+        #one {
+            transform: rotateY(-90deg) translateZ(100px);
+
+        }
+
+        #two {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        #three {
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+
+        #four {
+            transform: rotateX(-90deg) translateZ(-100px);
+        }
+
+        #five {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        #six {
+            transform: translateZ(100px);
+        }
+
+        /* @keyframes rotate-frame {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            10% {
+                transform: rotateX(0deg) rotateY(180deg);
+            }
+
+            20% {
+                transform: rotateX(-180deg) rotateY(180deg);
+            }
+
+            30% {
+                transform: rotateX(-360deg) rotateY(180deg);
+            }
+
+            40% {
+                transform: rotateX(-360deg) rotateY(360deg);
+            }
+
+            50% {
+                transform: rotateX(-180deg) rotateY(360deg);
+            }
+
+            60% {
+                transform: rotateX(90deg) rotateY(180deg);
+            }
+
+            70% {
+                transform: rotateX(0) rotateY(180deg);
+            }
+
+            80% {
+                transform: rotateX(90deg) rotateY(90deg);
+            }
+
+            90% {
+                transform: rotateX(90deg) rotateY(0);
+            }
+
+            100% {
+                transform: rotateX(0) rotateY(0);
+            } 
+
+
+        } */
+    </style>
+    <div id="container">
+        <div id="one">1</div>
+        <div id="two">2</div>
+        <div id="three">3</div>
+        <div id="four">4</div>
+        <div id="five">5</div>
+        <div id="six">6</div>
+    </div>
+
+
+    <script>
+        var body = document.getElementsByTagName("body");
+        var con = document.getElementById("container");
+        var flag = false;
+        document.onmousedown = function (e) {
+            if (!flag) {
+                flag = !flag;
+                var mouseX = e.clientX;
+                var mouseY = e.clientY;
+                // var rotateX = con;
+                document.onmousemove = function (e) {
+                    var afterX = e.clientX;
+                    var afterY = e.clientY;
+                    var differX = afterX-mouseX;
+                    var differY = afterY-mouseY;
+                    con.style.transform = "rotateX("+differY+"deg) rotateY("+differX+"deg) rotatez(0deg) scale3d(1,1,1)";   
+                }
+            }
+            flag=true;
+        }
+        document.onmouseup = function (e) {
+            document.onmousemove=null;
+            flag =false;
+
+        }
+    </script>
+
+</body>
+
+</html>
