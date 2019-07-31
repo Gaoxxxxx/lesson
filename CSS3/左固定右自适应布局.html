@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        /* 第一种 利用负margin
+        .div1{
+            width: 200px;
+            height: 300px;
+            background-color: brown;
+        }
+        .div2{
+            height: 300px;
+            margin-top: -300px;
+            margin-left: 200px;
+            background-color: aqua;
+        } */
+
+
+
+        /* 
+        第二种 利用弹性盒模型
+        .container{
+            display: flex;
+
+        }
+        .div1{
+            width: 200px;
+            height: 300px;
+            background-color: brown;
+        }
+        .div2{
+            flex:1;
+            height: 300px;
+            background-color: aqua;
+        } */
+
+
+        /* 第三种 利用浮动和marginleft */
+        .div1{
+            width: 200px;
+            height: 300px;
+            background-color: brown;
+            float: left;
+        }
+        .div2{
+            margin-left: 200px;
+            height: 300px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="div1">12456</div>
+    <div class="div2">123456</div>
+    </div>
+    
+</body>
+</html>
