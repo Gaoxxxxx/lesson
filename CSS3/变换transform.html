@@ -17,7 +17,7 @@
 
         body {
             background-color: #000;
-            perspective:700px;
+            perspective: 700px;
             /*设置视角  指定观察者距离「z=0」平面的距离，为元素及其内容应用透视变换。不允许负值 */
         }
 
@@ -38,7 +38,7 @@
             left: 0;
             width: 200px;
             height: 200px;
-            background-color: rgba(255, 255, 255, 0.4);
+
             transform: translate3d(15, 15);
             /* border-radius: 50%; */
             font-size: 50px;
@@ -49,27 +49,37 @@
 
         #one {
             transform: rotateY(-90deg) translateZ(100px);
+            background-color: rgba(255, 0, 0, 0.7);
 
         }
 
         #two {
             transform: rotateY(90deg) translateZ(100px);
+            background-color: rgb(255, 146, 0, 0.7);
         }
 
         #three {
             transform: rotateX(90deg) translateZ(-100px);
+            background-color: rgba(255, 251, 4, 0.7);
+
         }
 
         #four {
-            transform: rotateX(-90deg) translateZ(-100px);
+            transform: rotateX(-270deg) translateZ(100px);
+            background-color: rgb(17, 156, 17, 0.7);
+
         }
 
         #five {
             transform: rotateY(180deg) translateZ(100px);
+            background-color: rgb(4, 196, 255, 0.7);
+
         }
 
         #six {
             transform: translateZ(100px);
+            background-color: rgb(4, 63, 255, 0.7);
+
         }
 
         /* @keyframes rotate-frame {
@@ -131,29 +141,34 @@
 
 
     <script>
-        var body = document.getElementsByTagName("body");
         var con = document.getElementById("container");
         var flag = false;
+        differX = 0;
+        differY = 0;
+        posX = 0;
+        posY = 0;
         document.onmousedown = function (e) {
             if (!flag) {
                 flag = !flag;
-                var mouseX = e.clientX;
-                var mouseY = e.clientY;
-                // var rotateX = con;
+                var mouseX = posX || e.clientX;
+                var mouseY = posY || e.clientY;
+
                 document.onmousemove = function (e) {
                     var afterX = e.clientX;
                     var afterY = e.clientY;
-                    var differX = afterX-mouseX;
-                    var differY = afterY-mouseY;
-                    con.style.transform = "rotateX("+differY+"deg) rotateY("+differX+"deg) rotatez(0deg) scale3d(1,1,1)";   
+                    differX = afterX - mouseX;
+                    differY = afterY - mouseY;
+                    con.style.transform = "rotateX(" + differY + "deg) rotateY(" + differX +
+                        "deg) rotatez(0deg)";
+                    // posX = differX;
+                    // posY=differY;
                 }
             }
-            flag=true;
+            flag = true;
         }
         document.onmouseup = function (e) {
-            document.onmousemove=null;
-            flag =false;
-
+            document.onmousemove = null;
+            flag = false;
         }
     </script>
 
