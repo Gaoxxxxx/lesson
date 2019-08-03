@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-1.12.4.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* opacity: ; */
+
+        }
+    </style>
+    <div id="div1"></div>
+    <button id="hide">隐藏</button>
+    <button id="show">显示</button>
+    <button id="toggle">隐藏或显示</button>
+    <button id="animate">动画</button>
+    <button id="stop">取消当前动画</button>
+
+
+    <script>
+        $('#hide').on('click', function () {
+            $('#div1').hide();
+        });
+        $('#show').on('click', function () {
+            $('#div1').show();
+        });
+        $('#toggle').on('click', function () {
+            $('#div1').toggle();
+        });
+        $('#animate').on('click', function () {
+            $('#div1').animate({
+                opacity: 0.25,
+            }, 3000)
+        });
+
+        // 一个布尔值，指示是否取消以列队动画。默认 false.
+        // 一个布尔值指示是否当前动画立即完成 默认 false.
+        $('#stop').on('click', function () {
+            $('#div1').stop(false, false);
+        })
+    </script>
+</body>
+
+</html>

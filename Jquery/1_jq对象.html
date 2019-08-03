@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.js"></script>
+</head>
+<body>
+<p>你爱好的运动是:</p>
+<input type="checkbox" name="ball" id="" checked="true">足球
+<input type="checkbox" name="ball" id="">篮球
+<input type="checkbox" name="ball" id="">羽毛球
+<input type="checkbox" name="ball" id="">乒乓球
+<br>
+<button id="checkAll">全 选</button>
+<button id="checkNo">全不选</button>
+<button id="checkOther">反 选</button>
+
+    <script>
+        $('#checkAll').on('click',function(){
+            $('input:checkbox').prop('checked',true);
+        })
+        $('#checkNo').on('click',function(){
+            $('input:checkbox').prop('checked',false);
+        })
+        $('#checkOther').on('click',function(){
+            // index 为索引 elem为对象
+            $('input:checkbox').each(function(index,elem){
+                console.log(index,elem);
+                elem.checked = !elem.checked;
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-1.12.4.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #container {
+            width: 200px;
+            border: 1px solid #000;
+        }
+
+        h2 {
+            background-color: #000;
+            border: 1px solid #000;
+            color: #fff;
+        }
+
+        .unshow {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+    <ul id="container">
+        <li>
+            <h2>管理区</h2>
+            <ul class="unshow">
+                <li>123</li>
+                <li>456</li>
+                <li>789</li>
+            </ul>
+        </li>
+        <li>
+            <h2>留言区</h2>
+            <ul class="unshow">
+                <li>111</li>
+                <li>222</li>
+                <li>333</li>
+
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        // $('h2').eq(0).on('click', function () {
+        //     $(this).next().removeClass('unshow');
+        // })
+        // $('h2').eq(1).on('click', function () {
+        //     $(this).next().removeClass('unshow');
+        // })
+
+        $('h2').eq(0).on('click', function () {
+            $('li ul').eq(0).toggle(function () {
+                $(this).next().removeClass('unshow');
+            }, function () {
+                $(this).next().addClass('unshow');
+            });
+        })
+        $('h2').eq(1).on('click', function () {
+            $('li ul').eq(1).toggle(function () {
+                $(this).next().removeClass('unshow');
+            }, function () {
+                $(this).next().addClass('unshow');
+            });
+        })
+    </script>
+</body>
+
+</html>

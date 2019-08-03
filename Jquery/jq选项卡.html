@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-1.12.4.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            width: 80px;
+            height: 40px;
+            border: 1px solid #328AD3;
+            background: #fff;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .active {
+            background: #328AD3;
+            color: #fff;
+        }
+
+        .content {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #328AD3;
+        }
+        p{
+            display: none;
+        }
+        .select{
+            display: block;
+        }
+    </style>
+    <div class="container">
+        <div>
+            <button class="active">娱乐</button>
+            <button>时事</button>
+            <button>体育</button>
+        </div>
+
+        <div class="content">
+            <p class="select">娱乐</p>
+            <p>时事</p>
+            <p>体育</p>
+        </div>
+    </div>
+
+    <script>
+        var arr = ['娱乐', '时事', '体育'];
+        $('button').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $('p').eq($(this).index()).addClass('select').siblings().removeClass('select');
+
+        });
+
+        // $('#en').on('click', function () {
+        //     $('#en').css({
+        //         'background': '#328AD3',
+        //         'color': '#fff'
+        //     })
+        // })
+    </script>
+</body>
+
+</html>

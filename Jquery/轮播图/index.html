@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="..\jquery-1.12.4.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+
+            text-decoration: none;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        .carousel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 25;
+        }
+
+        #count {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            margin-top: 30px;
+
+        }
+
+        li {
+            float: left;
+            margin-left: 5px;
+            font-size: 14px;
+            color: white;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        #leftright {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .car-img {
+            display: none;
+            float: left;
+        }
+
+
+        /*  */
+        .show {
+            display: block;
+        }
+
+        /*  */
+
+
+        .select {
+            background-color: rgba(238, 44, 44, 0.5);
+        }
+    </style>
+    <div class="carousel">
+        <img src="img\1.jpg" alt="图片" class="car-img show">
+        <img src="img\2.jpg" alt="图片" class="car-img">
+        <img src="img\3.jpg" alt="图片" class="car-img">
+        <img src="img\4.jpg" alt="图片" class="car-img">
+        <img src="img\5.jpg" alt="图片" class="car-img">
+        <ul id="count">
+            <li class="select">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul id="leftright">
+            <li id="font">&lt;</li>
+            <li id="next">&gt;</li>
+        </ul>
+    </div>
+
+
+    <script>
+        var idx = 0;
+        function change(index) {
+            $('#count li').eq(index).addClass('select').siblings().removeClass('select');
+            $('img').eq(index).addClass('show').siblings().removeClass('show');
+        }
+        $('#count li').on('mouseover', function () {
+            change($(this).index());
+            idx = $(this).index();
+        });
+        $('#font').on('click', function () {
+            idx--;
+            if (idx == -1) {
+                idx = 4;
+            }
+            change(idx);
+        });
+        $('#next').on('click', function () {
+            idx++;
+            if (idx == 5) {
+                idx = 0;
+            }
+            change(idx);
+        });
+        var timer = setInterval(function () {
+            $('#next').trigger('click');
+        }, 1000);
+        $('.carousel').on('mouseover', function () {
+            clearInterval(timer);
+        });
+        $('.carousel').on('mouseout', function () {
+            timer = setInterval(function () {
+                $('#next').trigger('click');
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

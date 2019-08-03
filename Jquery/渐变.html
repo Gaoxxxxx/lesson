@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-1.12.4.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* opacity: ; */
+
+        }
+    </style>
+    <div id="div1"></div>
+    <button id="fadeIn">淡入</button>
+    <button id="fadeOut">淡出</button>
+    <button id="fadeTo">淡出/淡入50%</button>
+    <button id="fadeToggle">显示/隐藏</button>
+
+    <!-- <button>淡入</button>
+    <button>淡入</button> -->
+    <script>
+        $('#fadeIn').on('click', function () {
+            $('#div1').fadeIn('1000');
+        });
+        $('#fadeOut').on('click', function () {
+            $('#div1').fadeOut('1000');
+        });
+        $('#fadeTo').on('click', function () {
+            $('#div1').fadeTo('1000', 0.5);
+        });
+
+        $("#fadeToggle").click(function () {
+            $('#div1').fadeToggle("fast", function () {
+                $(this).append("<div>finished</div>");//显示时插入一个finish 消失时也插入一个finish
+            });
+        });
+    </script>
+</body>
+
+</html>
