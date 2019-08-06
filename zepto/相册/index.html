@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="..\zepto.js"></script>
+    <script src="..\touch.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            touch-action: none;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+           
+        }
+
+        #container img {
+            width: 24%;
+            border-bottom: 5px solid #fff;
+        }
+
+        #content {
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100%;
+            height:100%;
+            background: #000 url('img/1.jpg') center center no-repeat; 
+            background-size:contain; 
+            display: none;  
+        }
+
+    </style>
+    <div id="container"></div>
+    <div id="content">
+        <img src="" alt="">
+    </div>
+    <script>
+        for(var i=0;i<24;i++){
+            $('<img src="img/thumbs/'+(i+1)+'.jpg">').appendTo('#container');
+            
+        }
+        var idx = 0;
+        var count=0;
+        $('#container img').on('click', function () {
+            idx = $(this).index();
+            $(this).hide().siblings().hide();
+            $('#content').show();
+            count = idx + 1;
+            console.log(count);
+            $('#content').css('background-image', 'url(img/'+count+'.jpg)');
+        });
+        $('#content').on('click',function(){
+            $('#content').hide();
+            $('#container img').show().siblings().show();
+            
+        });
+        $('body').on('swipeLeft','#content',function(){
+            count++;
+            if(count==25){
+                count=1;
+            }
+            $('#content').css('background-image', 'url(img/'+count+'.jpg)');
+        });
+        $('body').on('swipeRight','#content',function(){
+            count--;
+            if(count==0){
+                count=24;
+            }
+            $('#content').css('background-image', 'url(img/'+count+'.jpg)');
+        });
+
+
+    </script>
+</body>
+
+</html>
