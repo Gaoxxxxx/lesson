@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //构造Student类
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        Person.prototype.say=function(){
+            console.log('hhhhhhhhh');}
+        let p1 = new Person('zs',19);
+        p1.say();
+    
+        //
+        
+        function Student(name,age,major) { 
+            this.major=major;
+           Person.call(this,name,age);
+           /* 把继承person的name与age指向Student的实例化对象
+            如果不用call方法则继承的name和age指向window*/
+         }
+        Student.prototype = new Person();
+        Student.prototype.constructor = Student;//手动添加
+        //更改Student原型对象为Person的实例化对象进行方法继承
+         let s1 = new Student('lisi',20,'jsj');
+         s1.say();
+         console.log(s1.name);
+         console.log(Person.prototype);
+         console.log(Person.prototype.isPrototypeOf(p1));//true
+    </script>
+</body>
+</html>
