@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p1 = new Promise(function (resolve,reject) {  
+            setTimeout (function(){
+                var data = 1;
+                if(data){
+                    console.log(data);
+                    resolve();
+                }
+                else{
+                    reject();
+                }
+            },1000)
+        });
+        const p2 = new Promise(function (resolve,reject) {  
+            setTimeout (function(){
+                var data = 2;
+                if(data){
+                    resolve();
+                }
+                else{
+                    reject();
+                }
+            },2000)
+        });
+        const p3 = new Promise(function (resolve,reject) {  
+            setTimeout (function(){
+                var data =3;
+                if(data){
+                    resolve();
+                }
+                else{
+                    reject();
+                }
+            },500)
+        });
+        Promise.all([p1,p2,p3]).then(function () { 
+            console.log('ok');
+         }).catch(function(){
+             console.log('fail');
+         });
+    </script>
+</body>
+</html>

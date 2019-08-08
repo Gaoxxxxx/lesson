@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+    <script>
+        // var x = 10;
+        // function a() {
+        //     //console.log(x); 报错
+        //     let x = 20;
+        //     console.log(x); //报错
+        // }
+        // a();
+
+        // var a =10;
+        // let a=20;
+        // console.log(a);
+
+        // let a = 10;
+        // function c(){
+        //     console.log(a);
+        // }
+        // c();
+
+        // const obj = {
+        //     name: 'zs'
+        // }
+        // Object.freeze(obj);
+        // obj.name = 'lisi';
+        // console.log(obj); //'zs'
+
+        // const arr = [1, 2, 3];
+        // console.log(arr);
+        // Object.freeze(arr);
+        // arr[0] = 666;
+        // console.log(arr); //输出666，2，3  arr指向的地址未被修改
+
+        // let obj = {
+        //     name: 'zs',
+        //     age: 20
+        // }
+        // let {name,age} = obj;
+        // let {x,y} = obj;
+        // console.log(name,age)//'zs',20
+        // console.log(x,y)//'zs',20
+
+
+        // let obj = {
+        //     name: 'zs',
+        //     age: 20
+        // }
+        // let {name:x,age:y} = obj;
+        // console.log(name, age) //zs 20
+        // console.log(x, y) //zs 20
+
+        // arr = '123abc';
+        // let [a, b, c, d, e, f] = arr;
+        // console.log(a, b, c, d, e, f); //1 2 3 a b c
+
+
+        // let a = 5;
+        // let b = 6;
+        // function change(x,y){
+        //     let n;
+        //     n=x;
+        //     x=y;
+        //     y=n;
+        //     console.log(x,y) ;
+        // }
+        // change(a,b);
+        // let a = 5;
+        // let b = 6;
+        // [a,b]=[b,a];
+        // console.log(a,b);
+
+
+
+        // let arr1 = [1, 2, 3];
+        // let arr2 = [3, 4, 5];
+        // let arr = [...arr1, ...arr2];
+        // console.log(arr); //1 2 3 3 4 5
+
+
+
+
+        // function fn(b, ...rest) {
+        //     console.log(rest);
+        //     console.log(b);
+        // }
+        // fn(1,2,3);
+
+
+        // let obj1 = {
+        //     name: 'zs'
+        // }
+        // let obj2 = {
+        //     name: 'lisi',
+        //     school: 'weichuang'
+        // }
+        // let obj3 = {
+        //     ...obj1,
+        //     ...obj2
+        // };
+        // console.log(obj3);
+
+
+        // var aLi = document.getElementsByTagName('li');
+        // let arr2 = [...aLi];
+        // console.log(arr2);
+
+
+
+        // let a = 3;
+        // let b = 4;
+        // //输出“3+4的结果是7”
+        // console.log(a + "+" + b +"的结果为" + (a + b)); //3+4的结果是7
+        // //利用模板字符串
+        // console.log(`${a}+${b}的结果为${a+b}`); //3+4的结果是7
+
+
+        // let arr = ['a', 1, 'c', 5];
+        // console.log(arr.includes('a')); //true
+
+        // let s = 'hello world!';
+        // console.log(s.startsWith('h')); //true
+        // console.log(s.endsWith('!'));//true
+        // console.log('a'.repeat(5));
+        // console.log('x'.padStart(5, 'ab'));
+        // console.log('x'.padEnd(5, 'ab'));
+
+        //数值扩展
+        // console.log(Number.isNaN('1'));
+        // console.log(Math.trunc(4.2));
+        // console.log(Math.trunc('4.2'));
+        // console.log(Math.trunc());
+        // console.log(Math.sign(0));
+        // console.log(Math.sign(-2));
+        // console.log(Math.sign(2));
+        // console.log(Math.sign());
+        // console.log(Math.sign('5'));
+        //箭头函数
+        //箭头函数中的this指向定声明时的this（父作用域this） 普通函数指向调用时this
+        // let aLi = document.getElementsByTagName('li');
+        // for(var i = 0;i<aLi.length;i++){
+        //     aLi[i].onclick=function(){
+        //         setTimeout(()=>{
+        //             console.log(this);
+        //         },100);
+        //     }
+        // }
+        //箭头函数中的this指向父作用域this,但是当父作用域也是this函数时一级一级向上找，
+        //直至window或者祖先函数为非箭头函数为止
+        // let aLi = document.getElementsByTagName('li');
+        // for(var i = 0;i<aLi.length;i++){
+        //     aLi[i].onclick=()=>{
+        //         setTimeout(()=>{
+        //             console.log(this);//this指向window
+        //         },100);
+        //     }
+        // }
+        // let aLi = document.getElementsByTagName('li');
+        // console.log(aLi);
+
+
+        // var arr4 = [{
+        //     name: 'zs',
+        //     age: 20
+        // }, {
+        //     name: 'lisi',
+        //     age: 18
+        // }, {
+        //     name: 'wangnwu',
+        //     age: 30
+        // },
+        // {
+        //     name: 'xxx',
+        //     age: 18
+        // }];
+
+        // // 过滤出所有符合条件的成员
+        // var arr5 = arr4.filter(function(obj){
+        //     return obj.age == 18;
+        // })
+        // console.log(arr5);
+
+
+
+        // var arr3 = [1, 2, 3, 4, 5];
+        // // 找到第一个符合条件的成员
+        // var x = arr3.find(function (a, e, r) {
+        //     console.log(a,e,r);
+        //     return a > 1;
+        // });
+        // // console.log(x); 
+
+
+        // var arr6 = [1, 2, 3, 4, 5];
+        // var arr7 = arr6.map(function (val, index) {
+        //     return val * 2;
+        // })
+        // console.log(arr7);
+        // arr6.forEach(function(val,index){
+        //     console.log(val,index);
+        // });
+
+
+        function f(x, y) {
+            return {
+                x,
+                y
+            };
+        }
+
+        // 等同于
+
+        function f(x, y) {
+            return {
+                x: x,
+                y: y
+            };
+        }
+
+        f(1, 2); // Object {x: 1, y: 2}
+        console.log(f(1, 2));
+
+        obj = {
+            name: 123,
+            say() {
+                console.log('hahahah');
+            }
+        }
+        obj.say();
+    </script>
+</body>
+
+</html>

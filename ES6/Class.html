@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name){
+                this.name = name;
+            }
+            say(){
+                console.log('hahah');
+            }
+        }
+        let p1 = new Person('zs');
+        p1.say();
+        console.log(p1);//Person {name: "zs"}
+//coder继承person
+        class Coder extends Person{
+            constructor(){
+                super(name);
+                this.bald = true;
+            }
+            coding(){
+                console.log('Hello World!');
+            }
+        }
+        let c1 = new Coder('lisi',false);
+        c1.coding();
+        c1.say();
+        console.log(c1);
+    </script>
+</body>
+</html>
