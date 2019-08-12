@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div2">
+        <ul>
+            <li v-for='to in todos'>
+                {{to.text}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        let vl = new Vue({
+            el: '#div2',
+            data: {
+                todos: [{
+                        text: '学习 JavaScript'
+                    },
+                    {
+                        text: '学习 Vue'
+                    },
+                    {
+                        text: '整个项目'
+                    }
+                ]
+
+            }
+        })
+    </script>
+</body>
+
+</html>

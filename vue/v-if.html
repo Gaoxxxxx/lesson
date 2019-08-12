@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+       
+            <h3 v-show="flag">{{msg}}</h3>
+            <h3 v-if="a==2">222</h3>
+            <h3 v-else-if="a==3">3333</h3>
+            <h3 v-else>44444</h3>
+       
+        <button @click="fn()">戳我！</button>
+    </div>
+    <script>
+   let vm =new Vue({
+       el:"#div1",
+       data:{
+           msg:'hhhhh',
+           flag:true,
+           a:3
+       },
+       methods: {
+           fn(){
+               this.flag=!this.flag;
+           }
+       }
+   })
+    </script>
+</body>
+</html>

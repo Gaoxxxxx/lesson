@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="div1">{{msg}}</div>
+    <span class="div2">{{msg2}}</span>
+    <script>
+        let vm = new Vue({
+            el: '#div1', //el 挂载元素
+            data: { //加载数据
+                msg: 'hello world!'
+            }
+        });
+        let vm1 = new Vue({
+            el:'span',
+            data:{
+                msg2:'123456'
+            }
+        })
+    </script>
+</body>
+
+</html>

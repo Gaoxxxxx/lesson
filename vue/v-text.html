@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <!-- 如果用{{msg}}的形式 在网页刷新时会闪过{{msg}}然后再变成hhhh -->
+        <span v-text = 'msg'></span>
+        <span v-html="msg1"></span><!--html可识别标签-->
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'#div1',
+            data:{
+                msg:'hhhh',
+                msg1:'<a href="###">123<a>'
+            }
+        })
+    </script>
+</body>
+</html>
