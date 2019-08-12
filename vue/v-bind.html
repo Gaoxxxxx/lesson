@@ -19,7 +19,7 @@
         <input type="text" v-model="name" @keyup="filterFn()">
         <button @click="add()">添加</button>
         <ul>
-            <li v-for="(obj,index) in list" @click="change(obj)" :class="{red:obj.isRed}" v-show="obj.isShow">
+            <li v-for="(obj,index) in list" @click="change(obj)" v-bind:class="{red:obj.isRed}" v-show="obj.isShow">
                 {{obj.name}}<button @click.stop="del(index)">del</button>
             </li>
         </ul>
