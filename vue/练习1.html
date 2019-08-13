@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            margin: 10px 0;
+            list-style: none;
+        }
+
+        li {
+            /* display: flex;
+            align-items: center; */
+            box-sizing: border-box;
+            padding: 15px 10px;
+            width: 540px;
+            height: 50px;
+            background-color: #eee;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            margin: 5% auto;
+            width: 540px;
+        }
+
+        button {
+            width: 100px;
+        }
+
+        #searchContent {
+            margin-top: 5px;
+        }
+
+        .price,
+        .close {
+            float: right;
+        }
+        .close{
+            color:#ff0055;
+        }
+        .select {
+            background-color: #e996a6
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>todolist</h1>
+        <hr>
+        <div>
+            <label for="goodsName">名称：</label>
+            <input type="text" id="goodsName" placeholder="请输入商品名称" v-model="name" >
+            <label for="goodsPrice">价格：</label>
+            <input type="text" id="goodsPrice" placeholder="请输入商品价格" v-model="price" >
+            <button @click="add()">添加</button>
+            <input type="text" placeholder="请输入搜索内容" id="searchContent"  v-model="search" @keyup="filterFn()">
+            <button>搜索</button>
+            <ul>
+                <li v-for="(item, index) in goodsList"  @click.stop="change(item)" :class="{select:item.isSelect}" v-show="item.isShow">
+                    <input type="checkbox" v-model="item.checked">
+                    <span>{{item.name}}</span>
+                    <span class="close" @click.stop="del2(index)">[X]</span>
+                    <span class="price">{{item.price}}</span>
+                </li>
+            </ul>
+            <button @click="del()">删除</button>
+            <span>总价为：{{sum()}}</span>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: ".container",
+            data: {
+                goodsList: [{
+                        name: "牛仔裤",
+                        price: "111",
+                        isSelect:false,
+                        checked:false,
+                        isShow:true
+                    },
+                    {
+                        name: "iphone",
+                        price: "8888",
+                        isSelect:false,
+                        checked:false,
+                        isShow:true
+                    },
+                ],
+                name:'',
+                price:'',
+                search:''
+            },
+            methods: {
+                add(){
+                    this.goodsList.push({name:this.name,price:this.price,isSelect:false,select:false,isShow:true})
+                    this.name = '';
+                    this.price = '';
+                },
+                change(item){
+                    item.isSelect=!item.isSelect;
+                    item.checked=!item.checked;
+                },
+                del(){
+                    let delarr = this.goodsList.filter(function(goodsList) {
+                        //筛选出所有isSelect为false的值
+                        return(goodsList.isSelect!=true)
+                    });
+                    this.goodsList=delarr;//把新数组赋值给goodsList
+                },
+                del2(index){//点击x是删除当前条
+                    this.goodsList.splice(index,1);
+                    this.goodsList[index.isSelect==false];
+                },
+                filterFn(search){
+                    let value= this.search;
+                    this.goodsList.forEach(function(obj,index) {
+                        if(obj.name.includes(value)){
+                            obj.isShow=true;//如果用this.isShow则不能实现功能 因为此时this指向window
+                        }
+                        else{
+                            obj.isShow=false;
+                        }
+                     });
+                },
+                sum(){
+                    let count = 0;
+                    this.goodsList.forEach(function (obj,index) { 
+                        if(obj.isSelect==true){
+                            count+=obj.price*1;
+                        }
+                     }); 
+                     return count;
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

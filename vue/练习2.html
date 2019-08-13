@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+    </style>
+    <div id="container">
+        <span>是否选择付费设施</span><input type="checkbox" v-model="isShow" @click="selected()">
+        <ul v-show="isShow">
+            <li v-for="(item, index) in solveList" >
+                {{item.name}}({{item.price}})
+                <!-- 直接绑定到orderList上 若item改变则orderList也改变-->
+                <!-- value通过v-bind绑定item -->
+                <input type="checkbox" :value="item" v-model="orderList">
+            </li>
+    </ul>
+        
+        <p>订单费用信息</p>
+        <ul>
+            <li v-for="(item, index) in orderList" >
+                {{item.name}}({{item.price}})
+            </li>
+        </ul>
+        <p>总金额：<span>{{sum()}}</span></p>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: '#container',
+            data: {
+                isShow: false,
+                solveList: [{
+                        name: '沙发',
+                        price: 100
+                    },
+                    {
+                        name: 'wifi',
+                        price: 50
+                    },
+                    {
+                        name: '电脑',
+                        price: 200
+                    }
+                ],
+                orderList: [{
+                    name: '群力花园豪华型',
+                    price: 400
+                }]
+            },
+            methods: {
+                selected() {//选择付费
+                this.isShow = !this.isShow;
+                this.orderList.splice(1);
+                
+                },
+                sum() {
+                    let count = 0;
+                    console.log(this.orderList);
+                    this.orderList.forEach(function (obj, index) {
+                        count += obj.price * 1;
+                    });
+                    return count;
+                    
+                    
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
