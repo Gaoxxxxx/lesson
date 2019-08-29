@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <button @click="add()">change</button>
+        <button @click="fn()">destroy</button>
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                msg: 0
+            },
+            methods: {
+                add() {
+                    this.msg = 1;
+                },
+                fn() {
+                    vm.$destroy();
+                }
+            },
+            beforeCreate: function () {//当前只是new一个vue实例
+                console.log(this.$el,this.$data);//undefined  undefined
+                console.log(this);//Vue实例
+            },
+            created: function () {//当前只是new一个vue实例
+                console.log(this.$el,this.$data);//el未挂载  打他初始化
+            },
+            beforeMount() {
+                console.log(this.$el,this.$data);
+            },
+            mounted() {
+                console.log(this.$el,this.$data);
+            },
+            beforeUpdate() {
+                let oDiv = document.getElementById('app');
+                console.log(oDiv.innerHTML);
+            },
+            updated() {
+                let oDiv = document.getElementById('app');
+                console.log(oDiv.innerHTML);
+            },
+            beforeDestroy() {
+                console.log("beforeDestroy");
+            },
+            destroyed() {
+                console.log("destroyed");
+            },
+        })
+    </script>
+</body>
+
+</html>

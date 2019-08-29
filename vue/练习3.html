@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .dialog {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .dialog-title {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .dialog-close {
+            float: right;
+        }
+    </style>
+    <div id="container">
+        <button @click="show()">登陆</button>
+        <button @click="isShow=true;loginShow=false;signinShow=true;">注册</button>
+        <pop-up title="登陆" v-show="loginShow">
+            <label for="name">用户名：</label><input type="text" id="name"><br>
+            <label for="password">密码：</label><input type="text" id="password"><br>
+            <button>login</button>
+        </pop-up>
+        <pop-up title="注册" v-show="signinShow">
+                <label for="name1">用户名：</label><input type="text" id="name1"><br>
+                <label for="password1">密码：</label><input type="text" id="password1"><br>
+                <button>signin</button>
+        </pop-up>
+
+    </div>
+    <template id="temp">
+        <div class="dialog" v-show="isShow">
+            <div class="dialog-title"><span>{{title}}</span><span class="dialog-close" @click="$emit('show', reg)">X</span>
+            </div>
+            <div class="dialog-content">
+                <slot></slot>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        new Vue({
+            el: '#container',
+            data: {
+                loginShow:false,
+                signinShow:false
+            },
+            components: {
+                "pop-up": {
+                    template: "#temp",
+                    props: ["title"],
+                    data: function () {
+                        return {
+                            isShow: true
+                        }
+                    },
+                    methods: {
+                        dialogClose(){
+                            this.isShow=false;
+                        }
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

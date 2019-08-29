@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button-counter></button-counter>
+        <my-components></my-components>
+    </div>
+    <div id="app1">
+            <button-counter></button-counter>
+    </div>
+    
+
+    <script>
+        //全局组件只能在所以实例化vue对象中使用
+        Vue.component('button-counter', {
+            data(){
+                return {count: 0}
+                
+            },
+            template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+        });
+       new Vue({
+            el: '#app',
+            data: {},
+            components: {
+                "myComponents": {
+                    template: "<p>123456789</p>"
+                }
+            }
+        })
+        new Vue({
+            el:"#app1",
+            data: {},
+        })
+    </script>
+</body>
+
+</html>
