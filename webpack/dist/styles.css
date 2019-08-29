@@ -1,0 +1,29 @@
+body {
+  background-color: pink; }
+p{
+    color: red;
+    background-image: url(images/c0f599c1083ab54d6d26c8dd8a1c15bf.jpg)
+}
+div{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(233, 241, 183, 0.7);
+    -webkit-animation: run 2s ease 3s;
+            animation: run 2s ease 3s;
+}
+@-webkit-keyframes run{
+    0%{
+        width: 100px;
+    }
+    100%{
+        width: 600px;
+    }
+}
+@keyframes run{
+    0%{
+        width: 100px;
+    }
+    100%{
+        width: 600px;
+    }
+}
